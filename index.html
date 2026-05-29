@@ -1,0 +1,1425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certifed Online Trainer</title>
+
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      .effect {
+        transition: all 0.35s ease;
+        cursor: pointer;
+      }
+
+      .effect:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .effect-color {
+        transition: all 0.35s ease;
+        cursor: pointer;
+      }
+
+      .effect-color:hover {
+        transform: translateY(-10px) scale(1.02);
+        background-color: #7b7dfc !important;
+        box-shadow: 0 18px 40px rgba(123, 125, 252, 0.35);
+      }
+
+      .effect-color:hover i,
+      .effect-color:hover p,
+      .effect-color:hover h6,
+      .effect-color:hover small,
+      .effect-color:hover span,
+      .effect-color:hover a {
+        color: #fff !important;
+      }
+
+      /* =========================================================
+GLOBAL RESPONSIVE FIXES
+========================================================= */
+
+html,
+body {
+overflow-x: hidden;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
+
+/* Better spacing on smaller devices */
+section {
+padding-left: 12px;
+padding-right: 12px;
+}
+
+/* =========================================================
+HERO SECTION RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+.hero-title,
+h1 {
+font-size: 2.5rem !important;
+line-height: 1.25 !important;
+text-align: center;
+}
+
+.hero-subtitle,
+p {
+text-align: center;
+}
+
+.hero-buttons,
+.d-flex.flex-wrap.gap-3.mb-5 {
+justify-content: center;
+}
+
+.hero-trainers,
+.d-flex.align-items-center.mt-5 {
+justify-content: center;
+text-align: center;
+flex-direction: column;
+gap: 12px;
+}
+
+.hero-trainers .ms-3 {
+margin-left: 0 !important;
+}
+
+/* Hero image spacing */
+.position-relative.text-center img.img-fluid {
+max-width: 100% !important;
+}
+}
+
+/* =========================================================
+FLOATING CARDS RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+.card.position-absolute {
+position: relative !important;
+top: auto !important;
+left: auto !important;
+right: auto !important;
+bottom: auto !important;
+width: 100% !important;
+margin-top: 20px;
+}
+
+.position-relative.text-center {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+}
+
+/* =========================================================
+FEATURES SECTION
+========================================================= */
+
+@media (max-width: 767px) {
+.row.g-4.text-center .col-6 {
+width: 50%;
+}
+
+.row.g-4.text-center .p-3 {
+padding: 18px !important;
+}
+}
+
+/* =========================================================
+SKILLS SECTION
+========================================================= */
+
+@media (max-width: 767px) {
+.border.rounded-4.p-3.text-center {
+font-size: 14px;
+padding: 14px !important;
+}
+}
+
+/* =========================================================
+HOW IT WORKS SECTION
+========================================================= */
+
+@media (max-width: 991px) {
+.bi-chevron-right {
+display: none !important;
+}
+
+.rounded-circle.d-inline-flex {
+width: 80px !important;
+height: 80px !important;
+}
+
+.rounded-circle.d-inline-flex i {
+font-size: 30px !important;
+}
+}
+
+/* =========================================================
+TESTIMONIALS
+========================================================= */
+
+@media (max-width: 991px) {
+.testimonials-title,
+.col-lg-3.d-flex h2 {
+text-align: center;
+}
+
+.col-lg-3.d-flex p {
+text-align: center;
+}
+}
+
+/* =========================================================
+CTA SECTION
+========================================================= */
+
+@media (max-width: 991px) {
+.text-lg-end {
+text-align: center !important;
+}
+
+.col-lg-7.d-flex.align-items-center {
+flex-direction: column;
+text-align: center;
+}
+
+.col-lg-7 .me-4 {
+margin-right: 0 !important;
+margin-bottom: 20px;
+}
+
+.cta-buttons button {
+width: 100%;
+margin-top: 12px;
+}
+}
+
+/* =========================================================
+FOOTER RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+footer .row > div {
+text-align: center;
+}
+
+footer .d-flex.gap-2 {
+justify-content: center;
+}
+
+footer .d-flex.align-items-center.bg-white {
+max-width: 100%;
+}
+
+footer .position-relative.d-flex.justify-content-end {
+flex-direction: column;
+gap: 15px;
+text-align: center;
+}
+
+footer .position-absolute.start-50 {
+position: relative !important;
+transform: none !important;
+left: auto !important;
+}
+}
+
+/* =========================================================
+TABLET LANDSCAPE FIXES
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+h1 {
+font-size: 3rem !important;
+}
+
+.card.position-absolute {
+width: 220px !important;
+}
+
+.container {
+max-width: 95%;
+}
+}
+
+/* =========================================================
+MOBILE PORTRAIT
+========================================================= */
+
+@media (max-width: 576px) {
+h1 {
+font-size: 2rem !important;
+}
+
+h2 {
+font-size: 1.6rem !important;
+}
+
+h5 {
+font-size: 1rem !important;
+}
+
+.btn {
+width: 100%;
+justify-content: center;
+}
+
+.navbar-brand {
+font-size: 1.7rem !important;
+}
+
+.badge {
+font-size: 12px !important;
+}
+
+.rounded-circle.border {
+width: 42px !important;
+height: 42px !important;
+}
+}
+
+/* =========================================================
+LANDSCAPE MOBILE FIX
+========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+section {
+margin-top: 40px !important;
+}
+
+h1 {
+font-size: 2rem !important;
+}
+
+.card.position-absolute {
+width: 180px !important;
+}
+
+.btn {
+padding: 10px 16px !important;
+}
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    margin-bottom: 20px;
+  }
+
+  .navbar .d-flex.gap-2 {
+    justify-content: center;
+  }
+}
+    </style>
+  </head>
+
+  <body class="bg-white">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-white py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-2 text-primary" href="#">
+          fle<span class="text-warning">::work</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav mx-auto gap-lg-4">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Our Services</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Who We Are</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">How We Work</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Job Postings</a>
+            </li>
+          </ul>
+
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-dark rounded px-4">
+              Login <i class="bi bi-person"></i>
+            </button>
+
+            <button class="btn btn-warning rounded px-4 fw-semibold">
+              Get Started <i class="bi bi-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="mt-5">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <!-- LEFT CONTENT -->
+          <div class="col-lg-6">
+            <!-- Badge -->
+            <span
+              class="badge rounded-pill px-4 py-2 fw-semibold"
+              style="background-color: #eeeafe; color: #7b7dfc"
+            >
+              Become a Certified Trainer
+            </span>
+
+            <!-- Heading -->
+            <h1
+              class="fw-bold lh-1 mt-4 mb-4 fs-1 hero-title"
+              style="color: #11133f; line-height: 1.15"
+            >
+              Teach. Inspire. Earn. On Your Terms.
+
+              <span style="color: #7b7dfc">
+                Become a FlexWork Certified Trainer.
+              </span>
+            </h1>
+
+            <!-- Description -->
+            <p
+              class="mb-4"
+              style="
+                color: #5f6383;
+                font-size: 1.1rem;
+                max-width: 540px;
+                line-height: 1.9;
+              "
+            >
+              Turn your expertise into impact. Teach globally, on your schedule,
+              and earn doing what you love.
+            </p>
+
+            <!-- Buttons -->
+            <div class="d-flex flex-wrap gap-3 mb-5 hero-buttons">
+              <!-- Primary Button -->
+              <a
+                href="#"
+                class="btn px-4 py-2 rounded-3 fw-bold d-inline-flex align-items-center gap-2"
+                style="background-color: #ffc928; color: #11133f"
+              >
+                Start Training Now
+                <i class="bi bi-arrow-right fs-3"></i>
+              </a>
+
+              <!-- Secondary Button -->
+              <a
+                href="#"
+                class="btn border px-4 py-2 rounded-3 fw-semibold d-inline-flex align-items-center gap-2"
+                style="border-color: #e4e6ef; color: #11133f; background: #fff"
+              >
+                <span
+                  class="d-inline-flex align-items-center justify-content-center rounded-circle"
+                  style="
+                    width: 28px;
+                    height: 28px;
+                    background: #7b7dfc;
+                    color: #fff;
+                  "
+                >
+                  <i class="bi bi-play-fill"></i>
+                </span>
+
+                Watch How It Works
+              </a>
+            </div>
+
+            <!-- Trainers -->
+            <div class="d-flex align-items-center mt-5 hero-trainers">
+              <!-- Images -->
+              <div class="d-flex align-items-center">
+                <img
+                  src="https://i.pravatar.cc/50?img=11"
+                  class="rounded-circle border border-3 border-white position-relative"
+                  width="50"
+                  height="50"
+                  style="z-index: 1"
+                  alt=""
+                />
+
+                <img
+                  src="https://i.pravatar.cc/50?img=12"
+                  class="rounded-circle border border-3 border-white position-relative"
+                  width="50"
+                  height="50"
+                  style="margin-left: -14px; z-index: 2"
+                  alt=""
+                />
+
+                <img
+                  src="https://i.pravatar.cc/50?img=13"
+                  class="rounded-circle border border-3 border-white position-relative"
+                  width="50"
+                  height="50"
+                  style="margin-left: -14px; z-index: 3"
+                  alt=""
+                />
+
+                <img
+                  src="https://i.pravatar.cc/50?img=14"
+                  class="rounded-circle border border-3 border-white position-relative"
+                  width="50"
+                  height="50"
+                  style="margin-left: -14px; z-index: 4"
+                  alt=""
+                />
+              </div>
+
+              <!-- Text -->
+              <div class="ms-3">
+                <h6 class="fw-bold mb-1" style="color: #11133f">
+                  500+ expert trainers
+                </h6>
+
+                <p class="mb-0 small" style="color: #5f6383">
+                  teaching and growing with FlexWork
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT IMAGE -->
+          <div class="col-lg-6">
+            <div class="position-relative text-center">
+              <!-- Background Shape -->
+              <!-- <div
+                class="position-absolute top-50 start-50 translate-middle rounded-circle"
+                style="
+                  width: 620px;
+                  height: 620px;
+                  background: #f1edff;
+                  z-index: 0;
+                "
+              ></div> -->
+
+              <!-- Secondary Shape -->
+              <!-- <div
+                class="position-absolute rounded-circle"
+                style="
+                  width: 420px;
+                  height: 420px;
+                  background: #e9e2ff;
+                  right: -40px;
+                  top: 20px;
+                  z-index: 0;
+                "
+              ></div> -->
+
+              <!-- Dots -->
+              <!-- <div
+                class="position-absolute"
+                style="
+                  width: 120px;
+                  height: 120px;
+                  right: 30px;
+                  bottom: 40px;
+                  background-image: radial-gradient(
+                    #c8beff 1.5px,
+                    transparent 1.5px
+                  );
+                  background-size: 14px 14px;
+                  z-index: 0;
+                "
+              ></div> -->
+
+              <!-- Main Image -->
+              <img
+                src="Hero-Image.png"
+                class="img-fluid position-relative rounded-4"
+                style="z-index: 2; max-width: 540px"
+                alt=""
+              />
+
+              <!-- CARD 1 -->
+              <div
+                class="card border-0 shadow-sm position-absolute rounded-4 effect"
+                style="top: 40px; left: 10px; z-index: 3; width: 230px"
+              >
+                <div class="card-body d-flex align-items-start gap-3 p-3">
+                  <div
+                    class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      background: #eeeafe;
+                      color: #7b7dfc;
+                    "
+                  >
+                    <i class="bi bi-globe fs-3"></i>
+                  </div>
+
+                  <div class="text-start">
+                    <h6 class="fw-bold mb-1" style="color: #11133f">
+                      Global Classroom
+                    </h6>
+
+                    <small style="color: #5f6383">
+                      Teach learners<br />
+                      from 150+ countries
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD 2 -->
+              <div
+                class="card border-0 shadow-sm position-absolute rounded-4 effect"
+                style="top: 100px; right: -10px; z-index: 3; width: 240px"
+              >
+                <div class="card-body d-flex align-items-start gap-3 p-3">
+                  <div
+                    class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      background: #eeeafe;
+                      color: #7b7dfc;
+                    "
+                  >
+                    <i class="bi bi-calendar-check fs-3"></i>
+                  </div>
+
+                  <div class="text-start">
+                    <h6 class="fw-bold mb-1" style="color: #11133f">
+                      Flexible Scheduling
+                    </h6>
+
+                    <small style="color: #5f6383">
+                      Create your timetable<br />
+                      and teach anytime
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CARD 3 -->
+              <div
+                class="card border-0 shadow-sm position-absolute rounded-4 effect"
+                style="bottom: 40px; right: 30px; z-index: 3; width: 220px"
+              >
+                <div class="card-body d-flex align-items-start gap-3 p-3">
+                  <div
+                    class="rounded-3 d-flex align-items-center justify-content-center flex-shrink-0"
+                    style="
+                      width: 42px;
+                      height: 42px;
+                      background: #eeeafe;
+                      color: #7b7dfc;
+                    "
+                  >
+                    <i class="bi bi-cash-stack fs-3"></i>
+                  </div>
+
+                  <div class="text-start">
+                    <h6 class="fw-bold mb-1" style="color: #11133f">
+                      Earn Your Way
+                    </h6>
+
+                    <small style="color: #5f6383">
+                      Get paid for every<br />
+                      learner you impact
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="mt-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-2">
+          Why Become a FlexWork Certified Trainer?
+        </h2>
+
+        <div class="row g-4 text-center">
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="p-3 effect">
+              <div class="bg-light rounded-4 d-inline-flex py-3 px-4 mb-3">
+                <i class="bi bi-globe2 fs-2" style="color: #7b7dfc"></i>
+              </div>
+
+              <h6 class="fw-bold">Expand Your Reach</h6>
+
+              <small class="text-secondary">
+                Connect with learners worldwide and build your personal brand.
+              </small>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="p-3 effect">
+              <div class="bg-light rounded-4 d-inline-flex py-3 px-4 mb-3">
+                <i
+                  class="bi bi-currency-dollar fs-2"
+                  style="color: #7b7dfc"
+                ></i>
+              </div>
+
+              <h6 class="fw-bold">Earn More</h6>
+
+              <small class="text-secondary">
+                Monetize your expertise with competitive payouts.
+              </small>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="p-3 effect">
+              <div class="bg-light rounded-4 d-inline-flex py-3 px-4 mb-3">
+                <i class="bi bi-calendar-week fs-2" style="color: #7b7dfc"></i>
+              </div>
+
+              <h6 class="fw-bold">Teach Your Way</h6>
+
+              <small class="text-secondary">
+                Choose your topics, set your schedule, teach on your terms.
+              </small>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="p-3 effect">
+              <div class="bg-light rounded-4 d-inline-flex py-3 px-4 mb-3">
+                <i class="bi bi-people fs-2" style="color: #7b7dfc"></i>
+              </div>
+
+              <h6 class="fw-bold">Grow Together</h6>
+
+              <small class="text-secondary">
+                Access resources, tools, and a supportive trainer community.
+              </small>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="p-3 effect">
+              <div class="bg-light rounded-4 d-inline-flex py-3 px-4 mb-3">
+                <i class="bi bi-award fs-2" style="color: #7b7dfc"></i>
+              </div>
+
+              <h6 class="fw-bold">Build Credibility</h6>
+
+              <small class="text-secondary">
+                Get recognized as a certified trainer on a trusted platform.
+              </small>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6">
+            <div class="p-3 effect">
+              <div class="bg-light rounded-4 d-inline-flex py-3 px-4 mb-3">
+                <i class="bi bi-heart fs-2" style="color: #7b7dfc"></i>
+              </div>
+
+              <h6 class="fw-bold">Make an Impact</h6>
+
+              <small class="text-secondary">
+                Empower careers and create real change through learning.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="mt-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-4">What You Can Teach</h2>
+
+        <div class="row g-4">
+          <div class="col-lg col-md-4 col-6">
+            <div class="border rounded-4 p-3 text-center effect">
+              <i class="bi bi-code-slash fs-5 me-2" style="color: #7b7dfc"></i>
+              <span class="fw-semibold">IT & Software</span>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-4 col-6">
+            <div class="border rounded-4 p-3 text-center effect">
+              <i class="bi bi-shield-lock fs-5 me-2" style="color: #7b7dfc"></i>
+              <span class="fw-semibold">Cyber Security</span>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-4 col-6">
+            <div class="border rounded-4 p-3 text-center effect">
+              <i class="bi bi-megaphone fs-5 me-2" style="color: #7b7dfc"></i>
+              <span class="fw-semibold">Digital Marketing</span>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-4 col-6">
+            <div class="border rounded-4 p-3 text-center effect">
+              <i class="bi bi-database fs-5 me-2" style="color: #7b7dfc"></i>
+              <span class="fw-semibold">Data Science</span>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-4 col-6">
+            <div class="border rounded-4 p-3 text-center effect">
+              <i class="bi bi-palette fs-5 me-2" style="color: #7b7dfc"></i>
+              <span class="fw-semibold">Design</span>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-4 col-6">
+            <div class="border rounded-4 p-3 text-center effect">
+              <i class="bi bi-grid fs-5 me-2" style="color: #7b7dfc"></i>
+              <span class="fw-semibold">And More</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="mt-5">
+      <div class="container">
+        <h2 class="fw-bold text-center mb-4">How It Works</h2>
+
+        <div class="row g-4 text-center align-items-start position-relative">
+          <!-- Step 1 -->
+          <div class="col-lg col-md-4 col-6">
+            <div class="p-3 position-relative effect">
+              <div
+                class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  background: rgba(123, 125, 252, 0.1);
+                "
+              >
+                <i
+                  class="bi bi-pencil-square"
+                  style="font-size: 40px; color: #7b7dfc"
+                ></i>
+              </div>
+
+              <h5 class="fw-bold mb-2">1. Apply</h5>
+
+              <p class="text-secondary small mb-0">
+                Submit your application and tell us about your expertise.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="col-auto d-none d-lg-flex align-items-center">
+            <i class="bi bi-chevron-right fs-2" style="color: #7b7dfc"></i>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="col-lg col-md-4 col-6">
+            <div class="p-3 effect">
+              <div
+                class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  background: rgba(123, 125, 252, 0.1);
+                "
+              >
+                <i
+                  class="bi bi-search"
+                  style="font-size: 40px; color: #7b7dfc"
+                ></i>
+              </div>
+
+              <h5 class="fw-bold mb-2">2. Review</h5>
+
+              <p class="text-secondary small mb-0">
+                Our team reviews your profile and expertise.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="col-auto d-none d-lg-flex align-items-center">
+            <i class="bi bi-chevron-right fs-2" style="color: #7b7dfc"></i>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="col-lg col-md-4 col-6">
+            <div class="p-3 effect">
+              <div
+                class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  background: rgba(123, 125, 252, 0.1);
+                "
+              >
+                <i
+                  class="bi bi-patch-check"
+                  style="font-size: 40px; color: #7b7dfc"
+                ></i>
+              </div>
+
+              <h5 class="fw-bold mb-2">3. Get Certified</h5>
+
+              <p class="text-secondary small mb-0">
+                Complete onboarding and become a certified trainer.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="col-auto d-none d-lg-flex align-items-center">
+            <i class="bi bi-chevron-right fs-2" style="color: #7b7dfc"></i>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="col-lg col-md-6 col-6">
+            <div class="p-3 effect">
+              <div
+                class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  background: rgba(123, 125, 252, 0.1);
+                "
+              >
+                <i
+                  class="bi bi-laptop"
+                  style="font-size: 40px; color: #7b7dfc"
+                ></i>
+              </div>
+
+              <h5 class="fw-bold mb-2">4. Create & Publish</h5>
+
+              <p class="text-secondary small mb-0">
+                Build your course or sessions and go live.
+              </p>
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="col-auto d-none d-lg-flex align-items-center">
+            <i class="bi bi-chevron-right fs-2" style="color: #7b7dfc"></i>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="col-lg col-md-6 col-6">
+            <div class="p-3 effect">
+              <div
+                class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm"
+                style="
+                  width: 100px;
+                  height: 100px;
+                  background: rgba(123, 125, 252, 0.1);
+                "
+              >
+                <i
+                  class="bi bi-wallet2"
+                  style="font-size: 40px; color: #7b7dfc"
+                ></i>
+              </div>
+
+              <h5 class="fw-bold mb-2">5. Teach & Earn</h5>
+
+              <p class="text-secondary small mb-0">
+                Start teaching, inspire learners, and earn on your terms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="mt-5 bg-white">
+      <div class="container bg-light rounded-5">
+        <div class="rounded-5 p-4 p-lg-5" style="background: #f7f5fb">
+          <div class="row g-4 align-items-stretch">
+            <!-- Left Content -->
+            <div class="col-lg-3 d-flex">
+              <div class="d-flex flex-column justify-content-center h-100">
+                <h2 class="fw-bold mb-4" style="color: #1f1f3d">
+                  Loved by <br />
+                  Expert Trainers
+                </h2>
+
+                <p class="text-secondary mb-0 lh-lg">
+                  Hear from trainers who are making an impact and building their
+                  careers with FlexWork.
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 1 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0 rounded-4 shadow h-100 effect-color">
+                <div class="card-body p-4">
+                  <i class="bi bi-quote fs-2" style="color: #7b7dfc"></i>
+
+                  <p class="text-secondary mt-3 mb-4 lh-lg">
+                    FlexWork gave me the platform to share my knowledge with a
+                    global audience. The flexibility and support are unmatched!
+                  </p>
+
+                  <div class="d-flex align-items-center mt-auto">
+                    <img
+                      src="https://i.pravatar.cc/50?img=10"
+                      class="rounded-circle"
+                      width="48"
+                      height="48"
+                      alt="Rohit Sharma"
+                    />
+
+                    <div class="ms-3">
+                      <h6 class="fw-bold mb-1">Rohit Sharma</h6>
+                      <small class="text-secondary">
+                        Cyber Security Expert
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0 rounded-4 shadow h-100 effect-color">
+                <div class="card-body p-4">
+                  <i class="bi bi-quote fs-2" style="color: #7b7dfc"></i>
+
+                  <p class="text-secondary mt-3 mb-4 lh-lg">
+                    Teaching on FlexWork has helped me grow professionally and
+                    also allowed me to make a bigger impact in learners’
+                    careers.
+                  </p>
+
+                  <div class="d-flex align-items-center mt-auto">
+                    <img
+                      src="https://i.pravatar.cc/50?img=12"
+                      class="rounded-circle"
+                      width="48"
+                      height="48"
+                      alt="Priya Mehta"
+                    />
+
+                    <div class="ms-3">
+                      <h6 class="fw-bold mb-1">Priya Mehta</h6>
+                      <small class="text-secondary">
+                        Digital Marketing Trainer
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="card border-0 rounded-4 shadow h-100 effect-color">
+                <div class="card-body p-4">
+                  <i class="bi bi-quote fs-2" style="color: #7b7dfc"></i>
+
+                  <p class="text-secondary mt-3 mb-4 lh-lg">
+                    The platform is easy to use, and the team is always there to
+                    support. I love the freedom to teach on my own terms.
+                  </p>
+
+                  <div class="d-flex align-items-center mt-auto">
+                    <img
+                      src="https://i.pravatar.cc/50?img=15"
+                      class="rounded-circle"
+                      width="48"
+                      height="48"
+                      alt="Amit Verma"
+                    />
+
+                    <div class="ms-3">
+                      <h6 class="fw-bold mb-1">Amit Verma</h6>
+                      <small class="text-secondary">
+                        Data Science Consultant
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Dots -->
+          <div class="d-flex justify-content-center mt-4">
+            <span
+              class="rounded-circle mx-1"
+              style="width: 10px; height: 10px; background: #7b7dfc"
+            ></span>
+
+            <span
+              class="rounded-circle mx-1"
+              style="width: 10px; height: 10px; background: #d9d9ff"
+            ></span>
+
+            <span
+              class="rounded-circle mx-1"
+              style="width: 10px; height: 10px; background: #d9d9ff"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-5">
+      <div class="container">
+        <div
+          class="rounded-5 p-4 p-lg-5 text-white position-relative overflow-hidden"
+          style="background: linear-gradient(90deg, #7b7dfc 0%, #7b7dfc 100%)"
+        >
+          <div class="row align-items-center">
+            <!-- Left Content -->
+            <div class="col-lg-7 d-flex align-items-center">
+              <!-- Cap Image -->
+              <div class="me-4 d-none d-sm-block">
+                <div
+                  class="d-flex align-items-center justify-content-center rounded-4"
+                  style="width: 90px; height: 90px"
+                >
+                  <img
+                    src="capBook.png"
+                    alt="Graduation Cap"
+                    style="width: 65px"
+                  />
+                </div>
+              </div>
+
+              <!-- Text -->
+              <div>
+                <h2 class="fw-bold mb-3" style="font-size: 2rem">
+                  Ready to Inspire and Earn?
+                </h2>
+
+                <p
+                  class="mb-0 text-white"
+                  style="max-width: 500px; line-height: 1.7"
+                >
+                  Join thousands of experts who are shaping the future of
+                  learning on FlexWork.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Buttons -->
+            <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">.
+              <div class="cta-buttons">
+              <button
+                class="btn fw-bold px-4 py-3 rounded-3 shadow-sm"
+                style="background: #ffbf1a; color: #111; border: none"
+              >
+                Start Training Now
+                <span class="ms-2">➜</span>
+              </button>
+
+              <button
+                class="btn btn-outline-light px-4 py-3 rounded-3 ms-lg-3 mt-3 mt-lg-0"
+                style="
+                  border-width: 1.5px;
+                  background: rgba(255, 255, 255, 0.05);
+                "
+              >
+                <span class="me-2"
+                  ><i class="bi bi-headphones text-white fs-6"></i
+                ></span>
+                Talk to an Advisor
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white mt-5">
+      <div class="container">
+        <!-- Top Footer -->
+        <div class="row gy-5 justify-content-between">
+          <!-- Logo + Social -->
+          <div class="col-lg-3">
+            <!-- Logo -->
+            <h2 class="fw-bold mb-2" style="color: #7b7dfc; font-size: 2.2rem">
+              fle<span class="text-warning">:work</span>
+            </h2>
+
+            <!-- Tagline -->
+            <p class="small mb-4" style="color: #8a8aa0">
+              Your Skills. Your Path. Your Earnings.
+            </p>
+
+            <!-- Social Icons -->
+            <div class="d-flex gap-2">
+              <a
+                href="#"
+                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                style="width: 38px; height: 38px; background-color: #7b7dfc"
+              >
+                <i class="bi bi-linkedin effect"></i>
+              </a>
+
+              <a
+                href="#"
+                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                style="width: 38px; height: 38px; background-color: #7b7dfc"
+              >
+                <i class="bi bi-twitter effect"></i>
+              </a>
+
+              <a
+                href="#"
+                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                style="width: 38px; height: 38px; background-color: #7b7dfc"
+              >
+                <i class="bi bi-facebook effect"></i>
+              </a>
+
+              <a
+                href="#"
+                class="d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none"
+                style="width: 38px; height: 38px; background-color: #7b7dfc"
+              >
+                <i class="bi bi-instagram effect"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Company -->
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4" style="color: #7b7dfc">Company</h6>
+
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Our Services
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  About Us
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Who We Are
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4" style="color: #7b7dfc">Resources</h6>
+
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  How We Work
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Pro Courses
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Job Postings
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Success Stories
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support -->
+          <div class="col-lg-2 col-md-4">
+            <h6 class="fw-bold mb-4" style="color: #7b7dfc">Support</h6>
+
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Pricing
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  FAQ
+                </a>
+              </li>
+
+              <li class="mb-2">
+                <a
+                  href="#"
+                  class="text-decoration-none small"
+                  style="color: #7b7dfc"
+                >
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-3">
+            <h6 class="fw-bold mb-4" style="color: #7b7dfc">
+              Subscribe to our newsletter
+            </h6>
+
+            <div
+              class="d-flex align-items-center bg-white border rounded-3 overflow-hidden"
+              style="height: 50px"
+            >
+              <input
+                type="email"
+                class="form-control border-0 shadow-none"
+                placeholder="Enter your email"
+              />
+
+              <button
+                class="btn text-dark h-100 px-4 border-0"
+                style="background-color: #ffc107"
+              >
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div
+          class="position-relative d-flex justify-content-end align-items-center mt-5 pt-4 mb-3"
+          style="border-top: 1px solid #ececf4"
+        >
+          <!-- Center Text -->
+          <p
+            class="mb-0 small position-absolute start-50 translate-middle-x text-dark"
+          >
+            © 2025 FlexWork. All rights reserved.
+          </p>
+
+          <!-- Right Links -->
+          <div class="d-flex align-items-center gap-3">
+            <a
+              href="#"
+              class="text-decoration-none small fw-bold"
+              style="color: #7b7dfc"
+            >
+              Privacy Policy
+            </a>
+
+            <span style="color: #c4c4d4">|</span>
+
+            <a
+              href="#"
+              class="text-decoration-none small fw-bold"
+              style="color: #7b7dfc"
+            >
+              Terms & Conditions
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
