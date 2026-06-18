@@ -278,19 +278,25 @@
       .how-it-works-row::before { content:'';position:absolute;top:150px;left:12%;right:12%;height:2px;background:rgba(123,125,252,0.15);z-index:0; }
       .col-auto .bi-chevron-right { color:var(--brand-purple)!important;font-size:2rem;position:relative;top:102px;z-index:2;padding:0 10px; }
 
-      /* TESTIMONIAL */
-      .carousel-indicators { margin-bottom:0; }
-      .carousel-indicators button { width:12px!important;height:12px!important;border-radius:50%;background:#d9d9ff!important;border:none!important;opacity:1!important; }
-      .carousel-indicators .active { background:var(--brand-purple)!important;transform:scale(1.2); }
-      .testimonial-card { transition:all .35s cubic-bezier(.34,1.56,.64,1);background:#fff!important;height:100%;min-height:340px;display:flex;flex-direction:column; }
-      .testimonial-card i { color:var(--brand-purple)!important;transition:all .35s ease; }
-      .testimonial-card h6,.testimonial-card p,.testimonial-card small { transition:all .35s ease; }
-      .testimonial-card .card-body { display:flex;flex-direction:column;height:100%; }
-      .testimonial-card p { flex-grow:1; }
-      .testimonial-card:hover { background:linear-gradient(135deg,var(--brand-purple) 0%,#6d70f5 100%)!important;transform:translateY(-10px);box-shadow:0 18px 40px rgba(123,125,252,.35)!important; }
-      .testimonial-card:hover i { color:#fff!important; }
-      .testimonial-card:hover h6,.testimonial-card:hover p,.testimonial-card:hover small { color:#fff!important; }
-      .testimonial-card:hover img { border:2px solid rgba(255,255,255,.8); }
+        /* ── TESTIMONIALS ── */
+      .testimonial-card{transition:all .35s cubic-bezier(.34,1.56,.64,1);background:#fff!important;height:100%;min-height:300px;display:flex;flex-direction:column}
+      .testimonial-card i{color:var(--brand-purple)!important;transition:all .35s}
+      .testimonial-card h6,.testimonial-card p,.testimonial-card small{transition:all .35s}
+      .testimonial-card .card-body{display:flex;flex-direction:column;height:100%}
+      .testimonial-card p{flex-grow:1}
+      .testimonial-card:hover{background:linear-gradient(135deg,var(--brand-purple) 0%,#6d70f5 100%)!important;transform:translateY(-10px);box-shadow:0 18px 40px rgba(123,125,252,.35)!important}
+      .testimonial-card:hover i{color:#fff!important}
+      .testimonial-card:hover h6,.testimonial-card:hover p,.testimonial-card:hover small{color:#fff!important}
+      .testimonial-card:hover img{border:2px solid rgba(255,255,255,.8)}
+
+      /* Carousel indicators */
+      #t-indicators{display:flex;justify-content:center;gap:8px;margin-top:20px}
+      #t-indicators button{width:12px;height:12px;border-radius:50%;background:#d9d9ff;border:none;padding:0;cursor:pointer;transition:background .25s,transform .25s}
+      #t-indicators button.active{background:var(--brand-purple);transform:scale(1.2)}
+
+      /* Carousel slide row */
+      .t-slide-row{display:flex;gap:24px}
+      .t-slide-row .t-card{flex:1;min-width:0}
 
       /* CTA */
       .cta-block { transition:box-shadow 0.4s ease,transform 0.4s ease;background-size:200% 200%!important;animation:gradientShift 6s ease infinite!important;position:relative;overflow:hidden;min-height:130px;display:flex;align-items:center; }
@@ -356,12 +362,173 @@
         .navbar-nav{margin-bottom:20px}
         .navbar .d-flex.gap-2{justify-content:center}
       }
-      @media(max-width:576px){
-        h1{font-size:2rem!important}
-        h2{font-size:1.6rem!important}
-        .btn{width:100%;justify-content:center}
-        .navbar-brand{font-size:1.7rem!important}
+    @media(max-width:549px){
+        .t-slide-row{flex-direction:column}
       }
+      /* =========================
+   HOW IT WORKS - Desktop
+========================= */
+.how-it-works-row{
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:nowrap;
+}
+
+.how-it-works-row .col-lg{
+    flex:1;
+    min-width:0;
+}
+
+.process-card-style{
+    height:100%;
+}
+
+.step-circle{
+    width:clamp(75px,7vw,100px) !important;
+    height:clamp(75px,7vw,100px) !important;
+}
+
+.step-circle i{
+    font-size:clamp(28px,3vw,40px) !important;
+}
+
+/* =========================
+   Tablet + Mobile
+========================= */
+@media (max-width: 991.98px){
+
+    .how-it-works-row{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:24px;
+    }
+
+    .how-it-works-row .col-lg{
+        width:100%;
+        max-width:500px;
+        flex:none;
+    }
+
+    .process-card-style{
+        text-align:center;
+    }
+
+    .how-connector{
+        display:none !important;
+    }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+@media (max-width:576px){
+
+    .how-it-works-row .col-lg{
+        max-width:100%;
+    }
+
+    .process-card-style{
+        padding:1.25rem !important;
+    }
+
+    .step-circle{
+        width:80px !important;
+        height:80px !important;
+    }
+
+    .step-circle i{
+        font-size:32px !important;
+    }
+}
+/* Tablet */
+@media (min-width:700px) and (max-width:950px){
+
+  .how-it-works-row{
+    justify-content:center !important;
+  }
+
+  .how-connector{
+    display:none !important;
+  }
+
+  .how-it-works-row > .col-lg{
+    flex:0 0 100% !important;
+    max-width:100% !important;
+    display:flex !important;
+    justify-content:center !important;
+  }
+
+  .process-card-style{
+    width:100%;
+    max-width:500px;
+    margin:0 auto;
+  }
+}
+
+ /* =========================
+   DESKTOP (1000 - 1400px)
+========================= */
+@media (min-width:1000px) and (max-width:1400px){
+
+  .process-card-style{
+    min-height:240px;
+    padding:18px 12px !important;
+  }
+
+  .step-circle{
+    width:70px !important;
+    height:70px !important;
+  }
+
+  .step-circle i{
+    font-size:28px !important;
+  }
+
+  .process-card-style h5{
+    font-size:1.1rem !important;
+  }
+
+  .process-card-style p{
+    font-size:0.9rem !important;
+    line-height:1.5 !important;
+  }
+
+  /* Connector spacing */
+  .col-auto.d-none.d-lg-flex{
+    padding-left:4px !important;
+    padding-right:4px !important;
+  }
+
+  .col-auto.d-none.d-lg-flex i{
+    font-size:24px !important;
+    transform:translateY(-8px);
+  }
+}
+/* Desktop only */
+@media (min-width: 992px) and (max-width:1400px) {
+
+  .col-auto.d-none.d-lg-flex{
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+
+    /* move the entire connector down */
+    position: relative;
+    top: 25px; /* increase to 30px or 35px if needed */
+  }
+
+  .col-auto.d-none.d-lg-flex i{
+    font-size: 28px !important;
+    color: var(--brand-purple);
+  }
+  .col-auto.d-none.d-lg-flex{
+    position: relative;
+    top: 12px; 
+  }
+
+}
+
     </style>
   </head>
   <body>
@@ -590,7 +757,7 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+     <!-- TESTIMONIALS -->
     <section class="mt-5 bg-white">
       <div class="container bg-light rounded-5">
         <div class="rounded-5 p-4 p-lg-5" style="background:#f7f5fb">
@@ -603,36 +770,11 @@
               </div>
             </div>
             <div class="col-lg-9">
-              <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="row g-4">
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">FlexWork gave me the platform to share my expertise with learners worldwide. The flexibility, support, and professional environment have helped me grow.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=12" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Rohit Sharma</h6><small class="text-secondary fw-semibold">Cyber Security Expert</small></div></div></div></div></div>
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">Teaching on FlexWork has expanded my reach and strengthened my professional brand. The platform makes it easy to connect with motivated learners every day.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=32" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Priya Mehta</h6><small class="text-secondary fw-semibold">Digital Marketing Trainer</small></div></div></div></div></div>
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">The platform is intuitive, reliable, and backed by a supportive team. I appreciate the freedom to teach on my own schedule while helping others succeed.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=14" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Amit Verma</h6><small class="text-secondary fw-semibold">Data Science Consultant</small></div></div></div></div></div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row g-4">
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">FlexWork has allowed me to connect with professionals from different industries. The platform's flexibility and support have made teaching both rewarding and enjoyable.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=25" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Sofia Chen</h6><small class="text-secondary fw-semibold">UI/UX Mentor</small></div></div></div></div></div>
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">The onboarding process was seamless, and the trainer support team is always available when needed. FlexWork has helped me deliver high-quality learning experiences.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=68" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Raj Patel</h6><small class="text-secondary fw-semibold">Cloud Architect</small></div></div></div></div></div>
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">I appreciate the freedom to design my own courses and teaching style. FlexWork provides the perfect environment to share knowledge while growing professionally.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=64" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">James Okafor</h6><small class="text-secondary fw-semibold">AI Trainer</small></div></div></div></div></div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row g-4">
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">FlexWork has given me the opportunity to share practical finance knowledge with learners from diverse industries. The platform's flexibility makes every session impactful.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=35" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Ananya Singh</h6><small class="text-secondary fw-semibold">Finance Trainer</small></div></div></div></div></div>
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">Through FlexWork, I have been able to reach learners across different regions and industries. The experience has strengthened my confidence and expanded my network.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=13" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Karan Malhotra</h6><small class="text-secondary fw-semibold">Leadership Coach</small></div></div></div></div></div>
-                      <div class="col-md-4"><div class="card border-0 rounded-4 shadow h-100 testimonial-card"><div class="card-body p-4"><i class="bi bi-quote fs-2"></i><p class="text-secondary mt-3 fw-semibold">FlexWork has been a game changer for my consulting career. The tools, community, and support make it easy to focus on what matters — teaching and inspiring learners.</p><div class="d-flex align-items-center mt-4"><img src="https://i.pravatar.cc/60?img=45" class="rounded-circle" width="50"><div class="ms-3"><h6 class="fw-bold mb-1">Neha Kapoor</h6><small class="text-secondary fw-semibold">Business Consultant</small></div></div></div></div></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-indicators position-relative mt-4">
-                  <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
-                  <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
-                  <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
-                </div>
+              <!-- Custom carousel: single .carousel-inner populated by JS -->
+              <div id="testimonialCarousel" style="overflow:hidden;position:relative">
+                <div id="t-track" style="display:flex;transition:transform .5s cubic-bezier(.22,1,.36,1)"></div>
               </div>
+              <div id="t-indicators"></div>
             </div>
           </div>
         </div>
@@ -664,124 +806,183 @@
       </div>
     </section>
 
-    <!-- FOOTER 
-    <footer class="bg-white mt-5">
-      <div class="container">
-        <div class="row gy-5 justify-content-between">
-          <div class="col-lg-3 foot-anim foot-col">
-            <a href="#" class="logo-wrap text-decoration-none d-inline-block mb-2"><h2 class="fw-bold mb-0" style="color:var(--brand-purple);font-size:2.2rem">fle<span style="color:var(--brand-yellow)">:work</span></h2></a>
-            <p class="small mb-4" style="color:#8a8aa0">Your Skills. Your Path. Your Earnings.</p>
-            <div class="d-flex gap-2">
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none" style="width:38px;height:38px;background-color:var(--brand-purple)"><i class="bi bi-linkedin"></i></a>
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none" style="width:38px;height:38px;background-color:var(--brand-purple)"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none" style="width:38px;height:38px;background-color:var(--brand-purple)"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none" style="width:38px;height:38px;background-color:var(--brand-purple)"><i class="bi bi-instagram"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-4 foot-anim foot-col">
-            <h6 class="fw-bold mb-4 foot-heading" style="color:var(--brand-purple)">Company</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="foot-link small">Home</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">Our Services</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">About Us</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">Who We Are</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-4 foot-anim foot-col">
-            <h6 class="fw-bold mb-4 foot-heading" style="color:var(--brand-purple)">Resources</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="foot-link small">How We Work</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">Pro Courses</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">Job Postings</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">Success Stories</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-4 foot-anim foot-col">
-            <h6 class="fw-bold mb-4 foot-heading" style="color:var(--brand-purple)">Support</h6>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="#" class="foot-link small">Pricing</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">FAQ</a></li>
-              <li class="mb-2"><a href="#" class="foot-link small">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 foot-anim">
-            <h6 class="fw-bold mb-4 foot-heading" style="color:var(--brand-purple)">Subscribe to our newsletter</h6>
-            <div class="nl-wrap"><input type="email" class="nl-input" placeholder="Enter your email"/><button class="nl-btn"><i class="bi bi-arrow-right"></i></button></div>
-          </div>
-        </div>
-        <hr style="border:none;height:1px;background:linear-gradient(90deg,transparent,#e5e7eb 20%,#e5e7eb 80%,transparent);margin:32px 0 20px"/>
-        <div class="position-relative d-flex justify-content-end align-items-center mb-3">
-          <p class="mb-0 small position-absolute start-50 translate-middle-x text-dark">© 2025 FlexWork. All rights reserved.</p>
-          <div class="d-flex align-items-center gap-3">
-            <a href="#" class="text-decoration-none small fw-bold" style="color:var(--brand-purple)">Privacy Policy</a>
-            <span style="color:#c4c4d4">|</span>
-            <a href="#" class="text-decoration-none small fw-bold" style="color:var(--brand-purple)">Terms &amp; Conditions</a>
-          </div>
-        </div>
-      </div>
-    </footer>-->
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-     if (history.scrollRestoration) history.scrollRestoration = 'manual';
-window.scrollTo({ top: 0, behavior: 'instant' });
-      const navbar = document.getElementById('mainNavbar');
-      window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 30); });
+    /* ───────────────────────────────────────────────
+       TESTIMONIAL DATA — 9 cards
+    ─────────────────────────────────────────────── */
+    const testimonials = [
+      { img:'12', name:'Rohit Sharma',    role:'Cyber Security Expert',     text:'FlexWork gave me the platform to share my expertise with learners worldwide. The flexibility, support, and professional environment have helped me grow.' },
+      { img:'32', name:'Priya Mehta',     role:'Digital Marketing Trainer', text:'Teaching on FlexWork has expanded my reach and strengthened my professional brand. The platform makes it easy to connect with motivated learners every day.' },
+      { img:'14', name:'Amit Verma',      role:'Data Science Consultant',   text:'The platform is intuitive, reliable, and backed by a supportive team. I appreciate the freedom to teach on my own schedule while helping others succeed.' },
+      { img:'25', name:'Sofia Chen',      role:'UI/UX Mentor',              text:'FlexWork has allowed me to connect with professionals from different industries. The flexibility and support have made teaching both rewarding and enjoyable.' },
+      { img:'68', name:'Raj Patel',       role:'Cloud Architect',           text:'The onboarding process was seamless, and the trainer support team is always available when needed. FlexWork has helped me deliver high-quality learning experiences.' },
+      { img:'64', name:'James Okafor',    role:'AI Trainer',                text:'I appreciate the freedom to design my own courses and teaching style. FlexWork provides the perfect environment to share knowledge while growing professionally.' },
+      { img:'35', name:'Ananya Singh',    role:'Finance Trainer',           text:'FlexWork has given me the opportunity to share practical finance knowledge with learners from diverse industries. The flexibility makes every session impactful.' },
+      { img:'13', name:'Karan Malhotra',  role:'Leadership Coach',          text:'Through FlexWork, I have been able to reach learners across different regions and industries. The experience has strengthened my confidence and expanded my network.' },
+      { img:'45', name:'Neha Kapoor',     role:'Business Consultant',       text:'FlexWork has been a game changer for my consulting career. The tools, community, and support make it easy to focus on what matters — teaching and inspiring learners.' }
+    ];
 
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            if (entry.target.classList.contains('section-heading')) entry.target.classList.add('underline-visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-      document.querySelectorAll('.reveal,.reveal-left,.reveal-scale').forEach(el => revealObserver.observe(el));
-      document.querySelectorAll('.section-heading').forEach(el => revealObserver.observe(el));
+    function cardHTML(t) {
+      return `<div class="card border-0 rounded-4 shadow h-100 testimonial-card">
+        <div class="card-body p-4">
+          <i class="bi bi-quote fs-2"></i>
+          <p class="text-secondary mt-3 fw-semibold">${t.text}</p>
+          <div class="d-flex align-items-center mt-4">
+            <img src="https://i.pravatar.cc/60?img=${t.img}" class="rounded-circle" width="50" height="50">
+            <div class="ms-3">
+              <h6 class="fw-bold mb-1">${t.name}</h6>
+              <small class="text-secondary fw-semibold">${t.role}</small>
+            </div>
+          </div>
+        </div>
+      </div>`;
+    }
 
-      document.querySelectorAll('.stagger-children').forEach(parent => {
-        parent.querySelectorAll('.reveal').forEach((child, i) => { child.style.transitionDelay = (i * 0.1) + 's'; });
-      });
+    /* ───────────────────────────────────────────────
+       CAROUSEL ENGINE
+    ─────────────────────────────────────────────── */
+    const track      = document.getElementById('t-track');
+    const indicators = document.getElementById('t-indicators');
+    const carousel   = document.getElementById('testimonialCarousel');
 
-      /* Float pause on hover */
-      document.querySelectorAll('.hero-card-1,.hero-card-2,.hero-card-3').forEach(card => {
-        card.addEventListener('mouseenter', () => { card.style.animationPlayState = 'paused'; });
-        card.addEventListener('mouseleave', () => { card.style.animationPlayState = 'running'; });
-      });
+    let currentSlide = 0;
+    let slides       = [];   // array of DOM slide elements
+    let autoTimer    = null;
 
-      /* Footer animation */
-      (function() {
-        var els = document.querySelectorAll('.foot-anim');
-        if (!els.length) return;
-        var io = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('foot-visible'); io.unobserve(e.target); } });
-        }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-        els.forEach(function(el) { io.observe(el); });
-      })();
+    function getPerSlide() {
+      const w = window.innerWidth;
+      if (w < 550)  return 1;
+      if (w < 1000) return 2;
+      return 3;
+    }
 
-      /* Particle canvas */
-      const canvas = document.getElementById('particle-canvas');
-      const ctx = canvas.getContext('2d');
-      let W, H, particles = [];
-      const PURPLE = '#7b7dfc', YELLOW = '#ffcd00';
-      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-      resize(); window.addEventListener('resize', resize);
-      class Particle {
-        constructor() { this.reset(); }
-        reset() { this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*3+1;this.vx=(Math.random()-.5)*.4;this.vy=(Math.random()-.5)*.4;this.color=Math.random()>.6?YELLOW:PURPLE;this.alpha=Math.random()*.5+.1;this.life=0;this.maxLife=200+Math.random()*200; }
-        update() { this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.maxLife||this.x<0||this.x>W||this.y<0||this.y>H)this.reset(); }
-        draw() { ctx.save();ctx.globalAlpha=this.alpha*(1-this.life/this.maxLife);ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();ctx.restore(); }
+    function buildSlides(perSlide) {
+      /* Clear */
+      track.innerHTML = '';
+      indicators.innerHTML = '';
+      slides = [];
+      currentSlide = 0;
+
+      /* chunk testimonials into groups */
+      const groups = [];
+      for (let i = 0; i < testimonials.length; i += perSlide) {
+        groups.push(testimonials.slice(i, i + perSlide));
       }
-      for(let i=0;i<60;i++) particles.push(new Particle());
-      function drawConnections() {
-        for(let i=0;i<particles.length;i++) for(let j=i+1;j<particles.length;j++) {
-          const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,dist=Math.sqrt(dx*dx+dy*dy);
-          if(dist<100){ctx.save();ctx.globalAlpha=(1-dist/100)*.12;ctx.strokeStyle=PURPLE;ctx.lineWidth=0.5;ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();ctx.restore();}
+
+      /* Build slide elements */
+      groups.forEach((group, idx) => {
+        const slide = document.createElement('div');
+        slide.style.cssText = 'min-width:100%;box-sizing:border-box;padding:4px 2px 12px';
+        slide.innerHTML = `<div class="t-slide-row">${group.map(t => `<div class="t-card">${cardHTML(t)}</div>`).join('')}</div>`;
+        track.appendChild(slide);
+        slides.push(slide);
+
+        /* Indicator dot (hidden on mobile via perSlide logic — we still build but hide) */
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Slide ${idx + 1}`);
+        if (idx === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goTo(idx));
+        indicators.appendChild(dot);
+      });
+
+      /* Hide dots on mobile */
+      indicators.style.display = perSlide === 1 ? 'none' : 'flex';
+
+      goTo(0, false);
+      startAuto();
+    }
+
+    function goTo(idx, animate = true) {
+      currentSlide = idx;
+      track.style.transition = animate ? 'transform .5s cubic-bezier(.22,1,.36,1)' : 'none';
+      track.style.transform  = `translateX(-${idx * 100}%)`;
+
+      /* sync dots */
+      indicators.querySelectorAll('button').forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
+    }
+
+    function next() {
+      goTo((currentSlide + 1) % slides.length);
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(next, 4000);
+    }
+
+    /* Pause on hover */
+    carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    carousel.addEventListener('mouseleave', startAuto);
+
+    /* Touch / swipe support */
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) diff > 0 ? next() : goTo((currentSlide - 1 + slides.length) % slides.length);
+    });
+
+    /* Rebuild on resize if perSlide changes */
+    let lastPerSlide = getPerSlide();
+    buildSlides(lastPerSlide);
+
+    window.addEventListener('resize', () => {
+      const p = getPerSlide();
+      if (p !== lastPerSlide) { lastPerSlide = p; buildSlides(p); }
+    });
+
+    /* ───────────────────────────────────────────────
+       REVEAL ON SCROLL
+    ─────────────────────────────────────────────── */
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          if (e.target.classList.contains('section-heading')) e.target.classList.add('underline-visible');
+          revealObs.unobserve(e.target);
         }
-      }
-      function animate() { ctx.clearRect(0,0,W,H);drawConnections();particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate); }
-      animate();
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-scale,.section-heading').forEach(el => revealObs.observe(el));
+
+    document.querySelectorAll('.stagger-children').forEach(parent => {
+      parent.querySelectorAll('.reveal').forEach((child, i) => { child.style.transitionDelay = (i * 0.1) + 's'; });
+    });
+
+    /* Hero card float pause */
+    document.querySelectorAll('.hero-card-1,.hero-card-2,.hero-card-3').forEach(card => {
+      card.addEventListener('mouseenter', () => card.style.animationPlayState = 'paused');
+      card.addEventListener('mouseleave', () => card.style.animationPlayState = 'running');
+    });
+
+    /* Footer animation */
+    const footObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('foot-visible'); footObs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.foot-anim').forEach(el => footObs.observe(el));
+
+    /* ───────────────────────────────────────────────
+       PARTICLE CANVAS
+    ─────────────────────────────────────────────── */
+    const canvas = document.getElementById('particle-canvas');
+    const ctx    = canvas.getContext('2d');
+    let W, H, particles = [];
+    const PURPLE = '#7b7dfc', YELLOW = '#ffcd00';
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize(); window.addEventListener('resize', resize);
+    class Particle {
+      constructor() { this.reset(); }
+      reset() { this.x=Math.random()*W;this.y=Math.random()*H;this.r=Math.random()*3+1;this.vx=(Math.random()-.5)*.4;this.vy=(Math.random()-.5)*.4;this.color=Math.random()>.6?YELLOW:PURPLE;this.alpha=Math.random()*.5+.1;this.life=0;this.maxLife=200+Math.random()*200; }
+      update() { this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.maxLife||this.x<0||this.x>W||this.y<0||this.y>H)this.reset(); }
+      draw() { ctx.save();ctx.globalAlpha=this.alpha*(1-this.life/this.maxLife);ctx.fillStyle=this.color;ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fill();ctx.restore(); }
+    }
+    for(let i=0;i<60;i++) particles.push(new Particle());
+    function drawConnections(){for(let i=0;i<particles.length;i++)for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){ctx.save();ctx.globalAlpha=(1-d/100)*.12;ctx.strokeStyle=PURPLE;ctx.lineWidth=.5;ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.stroke();ctx.restore();}}}
+    function animate(){ctx.clearRect(0,0,W,H);drawConnections();particles.forEach(p=>{p.update();p.draw();});requestAnimationFrame(animate);}
+    animate();
     </script>
   </body>
 </html>
