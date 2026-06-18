@@ -857,41 +857,67 @@
       return 3;
     }
 
-    function buildSlides(perSlide) {
-      /* Clear */
-      track.innerHTML = '';
-      indicators.innerHTML = '';
-      slides = [];
-      currentSlide = 0;
+function buildSlides(perSlide) {
 
-      /* chunk testimonials into groups */
-      const groups = [];
-      for (let i = 0; i < testimonials.length; i += perSlide) {
-        groups.push(testimonials.slice(i, i + perSlide));
-      }
+  /* Clear */
+  track.innerHTML = '';
+  indicators.innerHTML = '';
+  slides = [];
+  currentSlide = 0;
 
-      /* Build slide elements */
-      groups.forEach((group, idx) => {
-        const slide = document.createElement('div');
-        slide.style.cssText = 'min-width:100%;box-sizing:border-box;padding:4px 2px 12px';
-        slide.innerHTML = `<div class="t-slide-row">${group.map(t => `<div class="t-card">${cardHTML(t)}</div>`).join('')}</div>`;
-        track.appendChild(slide);
-        slides.push(slide);
+  /* Copy testimonials */
+  let data = [...testimonials];
 
-        /* Indicator dot (hidden on mobile via perSlide logic — we still build but hide) */
-        const dot = document.createElement('button');
-        dot.setAttribute('aria-label', `Slide ${idx + 1}`);
-        if (idx === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goTo(idx));
-        indicators.appendChild(dot);
-      });
+  /* Add tablet-only card so tablet gets 10 cards */
+  if (perSlide === 2) {
+    data.push({
+      img:'20',
+      name:'Sarah Wilson',
+      role:'Project Management Coach',
+      text:'FlexWork has provided an excellent platform to connect with learners and share industry expertise in a flexible and engaging way.'
+    });
+  }
 
-      /* Hide dots on mobile */
-      indicators.style.display = perSlide === 1 ? 'none' : 'flex';
+  /* Chunk testimonials into groups */
+  const groups = [];
+  for (let i = 0; i < data.length; i += perSlide) {
+    groups.push(data.slice(i, i + perSlide));
+  }
 
-      goTo(0, false);
-      startAuto();
-    }
+  /* Build slide elements */
+  groups.forEach((group, idx) => {
+    const slide = document.createElement('div');
+    slide.style.cssText =
+      'min-width:100%;box-sizing:border-box;padding:4px 2px 12px';
+
+    slide.innerHTML = `
+      <div class="t-slide-row">
+        ${group.map(t => `
+          <div class="t-card">
+            ${cardHTML(t)}
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    track.appendChild(slide);
+    slides.push(slide);
+
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', `Slide ${idx + 1}`);
+
+    if (idx === 0) dot.classList.add('active');
+
+    dot.addEventListener('click', () => goTo(idx));
+    indicators.appendChild(dot);
+  });
+
+  /* Hide dots on mobile */
+  indicators.style.display = perSlide === 1 ? 'none' : 'flex';
+
+  goTo(0, false);
+  startAuto();
+}
 
     function goTo(idx, animate = true) {
       currentSlide = idx;
